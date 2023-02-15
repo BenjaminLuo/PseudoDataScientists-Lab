@@ -3,5 +3,5 @@ module.exports = {
         "^.+\\.(js|jsx)$": "babel-jest",
     },
     testMatch: ['**/components/*.cy.js?(x)'],
-    testEnvironment: 'jest-environment-jsdom'
+    testEnvironment: 'jest-environment-jsdom',
 };
