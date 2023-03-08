@@ -1,27 +1,30 @@
 import React from 'react'
 import { useSelector, useDispatch } from 'react-redux'
-import { decrement, increment } from './counterSlice'
+import { decrement, increment, setVal } from './counterSlice'
 
 export default function Counter() {
     const count = useSelector((state) => state.counter.value)
     const dispatch = useDispatch()
 
+    const handleSubmit = (e) => {
+        e.preventDefault();
+        dispatch(setVal(document.getElementById('textval').value))
+    }
+
     return (
         <div>
             <div>
-                <button
-                    aria-label="Increment value"
-                    onClick={() => dispatch(increment())}
-                >
-                    Increment
-                </button>
                 <span>{count}</span>
-                <button
-                    aria-label="Increment value"
-                    onClick={() => dispatch(decrement())}
-                >
-                    Decrement
-                </button>
+                <form>
+                    <input id="textval" type="text" />
+                    <button
+                        type="submit"
+                        aria-label="Increment value"
+                        onClick={(e) => handleSubmit(e)}
+                    >
+                        Set Value
+                    </button>
+                </form>
 
             </div>
         </div>
