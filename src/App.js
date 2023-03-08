@@ -1,3 +1,10 @@
+
+import IncrementByAmount from './features/counter/IncrementByAmount.js';
+
 export default function App() {
-  return <div>Hello, world.</div>;
+  return (
+    <div>
+      <IncrementByAmount />
+    </div>
+  )
 }
